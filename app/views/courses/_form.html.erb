@@ -1,45 +1,88 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Add/Edit Course</h2>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="table-box">
+            <table class="table">
+              <thead>
+              <tr>
+                <th class="col-md-4">Description</th>
+                <th class="col-md-8">Input details</th>
+              </tr>
+              </thead>
+              <tbody>
+              <%= form_for(@course) do |f| %>
+                  <% if @course.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being
+                          saved:</h2>
+
+                        <ul>
+                          <% @course.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                  <% end %>
+
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :course_title, class: "col-md-4" %></td>
+                      <td><%= f.text_field :course_title, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :course_code, class: "col-md-4" %></td>
+                      <td><%= f.text_field :course_code, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :cradit_hour, class: "col-md-4" %></td>
+                      <td><%= f.text_field :cradit_hour, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :prequsite, class: "col-md-4" %></td>
+                      <td><%= f.check_box :prequsite, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :lab_requirment, class: "col-md-4" %></td>
+                      <td><%= f.check_box :lab_requirment, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.label :offer_status, class: "col-md-4" %></td>
+                      <td><%= f.check_box :offer_status, class: "col-md-8 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="actions">
+                    <tr>
+                      <td><%= f.submit class: "btn btn-success" %></td>
+                      <td><%= link_to 'Back', courses_path, class: "btn btn-info" %></td>
+                    </tr>
+                  </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+  <!-- Row End -->
+</div>
 
-  <div class="field">
-    <%= f.label :course_title %><br>
-    <%= f.text_field :course_title %>
-  </div>
-  <div class="field">
-    <%= f.label :course_code %><br>
-    <%= f.text_field :course_code %>
-  </div>
-  <div class="field">
-    <%= f.label :cradit_hour %><br>
-    <%= f.text_field :cradit_hour %>
-  </div>
-  <div class="field">
-    <%= f.label :prequsite %><br>
-    <%= f.check_box :prequsite %>
-  </div>
-  <div class="field">
-    <%= f.label :lab_requirment %><br>
-    <%= f.check_box :lab_requirment %>
-  </div>
-  <div class="field">
-    <%= f.label :offer_status %><br>
-    <%= f.check_box :offer_status %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

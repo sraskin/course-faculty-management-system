@@ -1,39 +1,58 @@
-<p id="notice"><%= notice %></p>
+<%= render(:partial => "home/top") %>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Listing all courses</h2>
 
-<h1>Listing Courses</h1>
+          <p id="notice"><%= notice %></p>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-<table>
-  <thead>
-    <tr>
-      <th>Course title</th>
-      <th>Course code</th>
-      <th>Cradit hour</th>
-      <th>Prequsite</th>
-      <th>Lab requirment</th>
-      <th>Offer status</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <div class="table-box">
+            <table class="table">
+              <tr>
+                <th>Course title</th>
+                <th>Course code</th>
+                <th>Credit hour</th>
+                <th>Perquisite</th>
+                <th>Lab requirement</th>
+                <th>Offer status</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.course_title %></td>
-        <td><%= course.course_code %></td>
-        <td><%= course.cradit_hour %></td>
-        <td><%= course.prequsite %></td>
-        <td><%= course.lab_requirment %></td>
-        <td><%= course.offer_status %></td>
-        <td><%= course.slug %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <tbody>
+              <% @courses.each do |course| %>
+                  <tr>
+                    <td><%= course.course_title %></td>
+                    <td><%= course.course_code %></td>
+                    <td><%= course.cradit_hour %></td>
+                    <td><%= course.prequsite %></td>
+                    <td><%= course.lab_requirment %></td>
+                    <td><%= course.offer_status %></td>
+                    <td><%= link_to 'Show', course, class:"btn btn-info" %></td>
+                    <td><%= link_to 'Edit', edit_course_path(course), class:"btn btn-warning" %></td>
+                    <td><%= link_to 'Destroy', course, method: :delete, data: {confirm: 'Are you sure?'}, class:"btn btn-danger" %></td>
+                  </tr>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br>
 
-<br>
+            <%= link_to 'New Course', new_course_path, class: "btn btn-primary" %>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Row End -->
+</div>
 
-<%= link_to 'New Course', new_course_path %>
+
+<%= render(:partial => "home/bottom") %>
