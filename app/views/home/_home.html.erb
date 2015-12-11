@@ -1,0 +1,274 @@
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="stat-box colorone">
+        <i class="author">&nbsp;</i>
+        <h4>Number of Available Faculties</h4>
+
+        <h1>10</h1>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="stat-box colortwo">
+        <i class="chart">&nbsp;</i>
+        <h4>Total Attendant</h4>
+
+        <h1>300</h1>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="stat-box colorthree">
+        <i class="pages">&nbsp;</i>
+        <h4>Total Absent</h4>
+
+        <h1>125</h1>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="stat-box colorfour">
+        <i class="users">&nbsp;</i>
+        <h4>On going classes</h4>
+
+        <h1>9</h1>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="stat-box colorfive">
+        <i class="downloads">&nbsp;</i>
+        <h4>Total Postponed Class</h4>
+
+        <h1>5</h1>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="stat-box colorsix">
+        <i class="comments">&nbsp;</i>
+        <h4>Total Class Taken</h4>
+
+        <h1>15</h1>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Average Attendance Chart</h2>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
+
+          <div class="charts-box boxpadding">
+            <script type="text/javascript" src="../../../assets/js/raphael-2.1.0.min.js"></script>
+            <script type="text/javascript" src="../../../assets/js/morris-0.4.1.min.js"></script>
+            <div id="displaydigonalbar" class="chartdark"></div>
+            <script>
+              var day_data = [
+                {"period": "2012-10-01", "licensed": 3407, "sorned": 660},
+                {"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+                {"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+                {"period": "2012-09-20", "licensed": 3246, "sorned": 661}
+              ];
+              Morris.Bar({
+                element: 'displaydigonalbar',
+                data: day_data,
+                xkey: 'period',
+                ykeys: ['licensed', 'sorned'],
+                labels: ['Licensed', 'SORN'],
+                xLabelAngle: 60,
+
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Faculty Ranking</h2>
+        </header>
+        <div class="contents boxpadding">
+          <a class="togglethis">Toggle</a>
+
+          <div class="charts-box">
+            <div id="donutchartcolor"></div>
+            <script>
+              Morris.Donut({
+                element: 'donutchartcolor',
+                data: [
+                  {value: 50, label: 'Faculty 1'},
+                  {value: 20, label: 'Faculty 2'},
+                  {value: 18, label: 'Faculty 3'},
+                  {value: 12, label: 'Faculty 4'}
+                ],
+                backgroundColor: '#ccc',
+                labelColor: '#060',
+                colors: [
+                  '#0BA462',
+                  '#39B580',
+                  '#67C69D',
+                  '#95D7BB'
+                ],
+                formatter: function (x) {
+                  return x + "%"
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-6">
+  <div class="sec-box">
+    <a class="closethis">Close</a>
+    <header>
+      <h2 class="heading">To Do lists</h2>
+    </header>
+    <div class="contents boxpadding">
+      <a class="togglethis">Toggle</a>
+
+      <div class="linkslist">
+        <ul>
+          <li class="success-list"><a href="#">to do list</a><span class="captions">23 minutes ago</span></li>
+          <li class="error-list"><a href="#">to do list</a><span class="captions">23 minutes ago</span>
+          </li>
+          <li><a href="#">to do list</a><span class="captions">23 minutes ago</span></li>
+          <li><a href="#">to do list</a><span></span></li>
+          <li><a href="#">to do list</a><span></span></li>
+          <li><a href="#">to do list</a><span></span></li>
+          <li><a href="#">to do list</a><span></span></li>
+          <li class="error-list"><a href="#">to do list</a><span class="captions">23 minutes ago</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-6">
+  <div class="sec-box">
+    <a href="#" class="closethis">Close</a>
+    <header>
+      <h2 class="heading">Faculty Members</h2>
+    </header>
+    <div class="contents boxpadding">
+      <a href="#" class="togglethis">Toggle</a>
+
+      <div class="users-section scrolable scroller">
+        <ul>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 1</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar5.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 2</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar6.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 3</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar7.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 4</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar8.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 5</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 6</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 7</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar5.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 8</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar6.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 9</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar7.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 10</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar8.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 11</a></h5>
+            </div>
+          </li>
+          <li>
+            <figure>
+              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
+              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
+            </figure>
+            <div class="welcome">
+              <p>Designation</p>
+              <h5><a href="#">Faculty 12</a></h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
