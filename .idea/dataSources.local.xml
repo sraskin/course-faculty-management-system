@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails cfms: test" uuid="509d7136-41b2-4b3d-b26d-3e86798ebf66">
+      <first-sync>true</first-sync>
+      <user-name>sraskin</user-name>
+    </data-source>
+    <data-source name="Rails cfms: development" uuid="5664ebb6-1676-4f10-8a9a-e3fecc7b1d69">
+      <user-name>sraskin</user-name>
+      <user-password>df9edf99df99df93df93df9b</user-password>
+      <schema-pattern>cfms_development.pg_catalog cfms_development.public</schema-pattern>
+      <default-schemas>cfms_development.public</default-schemas>
+    </data-source>
+    <data-source name="Rails cfms: production" uuid="ef7ad89e-7d2c-409f-98a2-92ff16b49523">
+      <first-sync>true</first-sync>
+      <user-name>sraskin</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe9dfecdfe7dff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
