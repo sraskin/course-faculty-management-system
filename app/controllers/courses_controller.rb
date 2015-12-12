@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /courses
   # GET /courses.json
@@ -61,14 +62,17 @@ class CoursesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def course_params
-      params.require(:course).permit(:course_title, :course_code, :cradit_hour, :prequsite, :lab_requirment, :offer_status, :slug)
-    end
+
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def course_params
+    params.require(:course).permit(:course_title, :course_code, :cradit_hour, :prequsite, :lab_requirment, :offer_status, :slug)
+  end
 end
