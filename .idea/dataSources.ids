@@ -14,13 +14,13 @@
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
         <introspection-state-number>734</introspection-state-number>
-        <introspection-timestamp>2015-12-12.23:23:00.984</introspection-timestamp>
+        <introspection-timestamp>2015-12-13.12:44:12.860</introspection-timestamp>
       </schema>
       <schema id="3" parent="1" name="pg_catalog">
         <object-id>11</object-id>
         <comment>system catalog schema</comment>
         <introspection-state-number>720</introspection-state-number>
-        <introspection-timestamp>2015-12-12.23:23:01.411</introspection-timestamp>
+        <introspection-timestamp>2015-12-13.12:44:13.419</introspection-timestamp>
       </schema>
       <sequence id="4" parent="2" name="courses_id_seq">
         <object-id>16393</object-id>
