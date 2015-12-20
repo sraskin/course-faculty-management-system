@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :class_times
+  resources :sections
+  resources :faculties
   devise_for :users
   resources :courses
   root 'home#index'

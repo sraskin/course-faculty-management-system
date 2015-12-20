@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211213803) do
+ActiveRecord::Schema.define(version: 20151220132823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "class_times", force: :cascade do |t|
+    t.string   "schedule_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "course_sections", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_title"
@@ -26,6 +39,47 @@ ActiveRecord::Schema.define(version: 20151211213803) do
     t.string   "slug"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "faculties", force: :cascade do |t|
+    t.string   "f_name"
+    t.string   "f_id"
+    t.string   "f_initial"
+    t.string   "f_position"
+    t.string   "f_type"
+    t.string   "f_pic"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "section_faculties", force: :cascade do |t|
+    t.integer  "section_id"
+    t.integer  "faculty_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer  "s_number"
+    t.integer  "course_id"
+    t.integer  "faculty_id"
+    t.integer  "time_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "semister_courses", force: :cascade do |t|
+    t.integer  "semister_id"
+    t.integer  "course_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "semisters", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,6 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Rails cfms: test" uuid="509d7136-41b2-4b3d-b26d-3e86798ebf66">
       <first-sync>true</first-sync>
+      <user-name>cfms</user-name>
     </data-source>
     <data-source name="Rails cfms: development" uuid="5664ebb6-1676-4f10-8a9a-e3fecc7b1d69">
       <user-name>sraskin</user-name>

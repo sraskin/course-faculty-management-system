@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>F name:</strong>
+  <%= @faculty.f_name %>
+</p>
+
+<p>
+  <strong>F:</strong>
+  <%= @faculty.f_id %>
+</p>
+
+<p>
+  <strong>F initial:</strong>
+  <%= @faculty.f_initial %>
+</p>
+
+<p>
+  <strong>F position:</strong>
+  <%= @faculty.f_position %>
+</p>
+
+<p>
+  <strong>F type:</strong>
+  <%= @faculty.f_type %>
+</p>
+
+<p>
+  <strong>F pic:</strong>
+  <%= @faculty.f_pic %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @faculty.slug %>
+</p>
+
+<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
+<%= link_to 'Back', faculties_path %>

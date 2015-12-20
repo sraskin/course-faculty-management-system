@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Class Times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Schedule type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @class_times.each do |class_time| %>
+      <tr>
+        <td><%= class_time.schedule_type %></td>
+        <td><%= link_to 'Show', class_time %></td>
+        <td><%= link_to 'Edit', edit_class_time_path(class_time) %></td>
+        <td><%= link_to 'Destroy', class_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Class time', new_class_time_path %>

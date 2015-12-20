@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  f_name: MyString
+  f_id: MyString
+  f_initial: MyString
+  f_position: MyString
+  f_type: MyString
+  f_pic: MyString
+  slug: MyString
+
+two:
+  f_name: MyString
+  f_id: MyString
+  f_initial: MyString
+  f_position: MyString
+  f_type: MyString
+  f_pic: MyString
+  slug: MyString
