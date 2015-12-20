@@ -1,39 +1,32 @@
+<%= render(:partial => "home/top") %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>F name:</strong>
+  <strong>Faculty Name:</strong>
   <%= @faculty.f_name %>
 </p>
 
 <p>
-  <strong>F:</strong>
+  <strong>Faculty ID:</strong>
   <%= @faculty.f_id %>
 </p>
 
 <p>
-  <strong>F initial:</strong>
+  <strong>Faculty Initial:</strong>
   <%= @faculty.f_initial %>
 </p>
 
 <p>
-  <strong>F position:</strong>
+  <strong>Faculty Position:</strong>
   <%= @faculty.f_position %>
 </p>
 
 <p>
-  <strong>F type:</strong>
+  <strong>Faculty Type:</strong>
   <%= @faculty.f_type %>
 </p>
 
-<p>
-  <strong>F pic:</strong>
-  <%= @faculty.f_pic %>
-</p>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @faculty.slug %>
-</p>
-
-<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
-<%= link_to 'Back', faculties_path %>
+<%= link_to 'Edit', edit_faculty_path(@faculty),class: "btn btn-warning" %> |
+<%= link_to 'Back', faculties_path,class: "btn btn-success" %>
+<%= render(:partial => "home/bottom") %>

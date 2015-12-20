@@ -158,115 +158,17 @@
 
       <div class="users-section scrolable scroller">
         <ul>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 1</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar5.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 2</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar6.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 3</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar7.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 4</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar8.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 5</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 6</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 7</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar5.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 8</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar6.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 9</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar7.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 10</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar8.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 11</a></h5>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
-              <a href="#"><img src="../../../assets/images/avatar9.png" alt="Adminise"/></a>
-            </figure>
-            <div class="welcome">
-              <p>Designation</p>
-              <h5><a href="#">Faculty 12</a></h5>
-            </div>
-          </li>
+          <% @faculties.each do |faculty| %>
+              <li>
+                <figure>
+                  <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
+                </figure>
+                <div class="welcome">
+                  <p><%= faculty.f_position %></p>
+                  <h5><a href="/faculties/"><%= faculty.f_name %></a></h5>
+                </div>
+              </li>
+          <% end %>
         </ul>
       </div>
     </div>

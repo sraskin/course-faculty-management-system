@@ -1,45 +1,76 @@
-<%= form_for(@faculty) do |f| %>
-  <% if @faculty.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@faculty.errors.count, "error") %> prohibited this faculty from being saved:</h2>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Add/Edit Course</h2>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-      <ul>
-      <% @faculty.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="table-box">
+            <table class="table">
+              <thead>
+              <tr>
+                <th class="col-md-12">Input details</th>
+              </tr>
+              </thead>
+              <tbody>
+              <%= form_for(@faculty) do |f| %>
+                  <% if @faculty.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@faculty.errors.count, "error") %> prohibited this faculty from being
+                          saved:</h2>
+
+                        <ul>
+                          <% @faculty.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                  <% end %>
+
+                  <div class="field">
+                    <tr>
+                      <td><%= f.text_field :f_name, class: "col-md-12 form-control", placeholder: "Faculty Name" %>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.text_field :f_id, class: "col-md-12 form-control", placeholder: "Faculty ID" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.text_field :f_initial, class: "col-md-12 form-control", placeholder: "Faculty Initial" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.text_field :f_position, class: "col-md-12 form-control", placeholder: "Faculty Position" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= f.text_field :f_type, class: "col-md-12 form-control", placeholder: "Faculty Type" %></td>
+                    </tr>
+                  </div>
+                  <div class="actions">
+                    <tr>
+                      <td><%= f.submit class: "btn btn-success" %></td>
+                      <td><%= link_to 'Back', faculties_path, class: "btn btn-info" %></td>
+                    </tr>
+                  </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+  <!-- Row End -->
+</div>
 
-  <div class="field">
-    <%= f.label :f_name %><br>
-    <%= f.text_field :f_name %>
-  </div>
-  <div class="field">
-    <%= f.label :f_id %><br>
-    <%= f.text_field :f_id %>
-  </div>
-  <div class="field">
-    <%= f.label :f_initial %><br>
-    <%= f.text_field :f_initial %>
-  </div>
-  <div class="field">
-    <%= f.label :f_position %><br>
-    <%= f.text_field :f_position %>
-  </div>
-  <div class="field">
-    <%= f.label :f_type %><br>
-    <%= f.text_field :f_type %>
-  </div>
-  <div class="field">
-    <%= f.label :f_pic %><br>
-    <%= f.text_field :f_pic %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

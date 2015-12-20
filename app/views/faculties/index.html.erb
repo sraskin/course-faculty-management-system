@@ -1,39 +1,51 @@
-<p id="notice"><%= notice %></p>
+<%= render(:partial => "home/top") %>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Listing Faculties</h2>
+          <p id="notice"><%= notice %></p>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-<h1>Listing Faculties</h1>
+          <div class="table-box">
+            <table class="table">
+              <tr>
+                <th>Faculty Name</th>
+                <th>Faculty ID</th>
+                <th>Faculty Initial</th>
+                <th>Faculty Position</th>
+                <th>Faculty Yype</th>
+                <th colspan="3"></th>
+              </tr>
+              <tbody>
+              <% @faculties.each do |faculty| %>
+                  <tr>
+                    <td><%= faculty.f_name %></td>
+                    <td><%= faculty.f_id %></td>
+                    <td><%= faculty.f_initial %></td>
+                    <td><%= faculty.f_position %></td>
+                    <td><%= faculty.f_type %></td>
+                    <td><%= link_to 'Show', faculty, class:"btn btn-info" %></td>
+                    <td><%= link_to 'Edit', edit_faculty_path(faculty), class:"btn btn-warning" %></td>
+                    <td><%= link_to 'Destroy', faculty, method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger" %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>F name</th>
-      <th>F</th>
-      <th>F initial</th>
-      <th>F position</th>
-      <th>F type</th>
-      <th>F pic</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <br>
 
-  <tbody>
-    <% @faculties.each do |faculty| %>
-      <tr>
-        <td><%= faculty.f_name %></td>
-        <td><%= faculty.f_id %></td>
-        <td><%= faculty.f_initial %></td>
-        <td><%= faculty.f_position %></td>
-        <td><%= faculty.f_type %></td>
-        <td><%= faculty.f_pic %></td>
-        <td><%= faculty.slug %></td>
-        <td><%= link_to 'Show', faculty %></td>
-        <td><%= link_to 'Edit', edit_faculty_path(faculty) %></td>
-        <td><%= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Faculty', new_faculty_path %>
+            <%= link_to 'New Faculty', new_faculty_path, class: "btn btn-primary" %>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Row End -->
+</div>
+<%= render(:partial => "home/bottom") %>

@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
-  Section has_many :courses, through: :course_sections
-  Section has_many :section_faculties
-  Section has_many :faculties, through: :section_faculties
+  has_many :faculties, through: :section_faculties
+  has_many :courses, through: :course_sections
+  has_many :section_faculties
 end

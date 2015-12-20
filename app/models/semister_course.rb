@@ -1,4 +1,4 @@
 class SemisterCourse < ActiveRecord::Base
-  SemisterCourse belongs_to :semister
-  SemisterCourse belongs_to :course
+  belongs_to :semister
+  belongs_to :course
 end
