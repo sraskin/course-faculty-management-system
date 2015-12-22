@@ -15,10 +15,14 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+    @courses = Course.all
+    @class_times = ClassTime.all
   end
 
   # GET /sections/1/edit
   def edit
+    @courses = Course.all
+    @class_times = ClassTime.all
   end
 
   # POST /sections

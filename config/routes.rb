@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/offer_status'
   get 'home/mail'
+  get 'home/allocation'
+  post 'home/allocate'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

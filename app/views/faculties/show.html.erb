@@ -25,6 +25,12 @@
   <strong>Faculty Type:</strong>
   <%= @faculty.f_type %>
 </p>
+<p>
+  <strong>Sections:</strong>
+  <% @faculty.sections.each do |s| %>
+    <li><%= s.details %> </li>
+  <% end %>
+</p>
 
 
 <%= link_to 'Edit', edit_faculty_path(@faculty),class: "btn btn-warning" %> |

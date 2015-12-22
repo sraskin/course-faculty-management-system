@@ -1,0 +1,11 @@
+<p>Allocate Form</p>
+<%= form_tag home_allocate_path do %>
+
+    <%= select_tag :faculty_id, options_from_collection_for_select(@faculties, :id, :f_name) %>
+
+    <%= select_tag :section_id, option_groups_from_collection_for_select(@courses, :sections, :course_title, :id, :name ) %>
+
+    <div class="actions">
+      <%= submit_tag :save %>
+    </div>
+<% end %>
