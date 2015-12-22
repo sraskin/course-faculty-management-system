@@ -1,33 +1,67 @@
-<%= form_for(@section) do |f| %>
-  <% if @section.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Add/Edit Course</h2>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-      <ul>
-      <% @section.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <div class="table-box">
+            <table class="table">
+              <thead>
+              <tr>
+                <th class="col-md-12">Input details</th>
+              </tr>
+              </thead>
+              <tbody>
+              <%= form_for(@section) do |f| %>
+                  <% if @section.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being
+                          saved:</h2>
+
+                        <ul>
+                          <% @section.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                  <% end %>
+
+                  <div class="field">
+                    <tr>
+                      <td><%= f.number_field :s_number, class: "col-md-12 form-control", placeholder: "Section Number" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr><td><%= f.label "Choose Course" %><br></td></tr>
+                    <tr>
+                      <td><%= f.select :course_id, @courses.collect { |p| [p.course_title, p.id] }, {include_blank: true},  class: "col-md-12 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr><td><%= f.label "Choose Time Slot" %><br></td></tr>
+                    <tr>
+                      <td><%= f.select :time_id, @class_times.collect { |p| [p.schedule_type, p.id] }, {include_blank: true}, class: "col-md-12 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="actions">
+                    <tr>
+                      <td><%= f.submit class:"btn btn-success" %></td>
+                      <td><%= link_to 'Back', sections_path, class: "btn btn-info" %></td>
+                    </tr>
+                  </div>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :s_number %><br>
-    <%= f.number_field :s_number %>
   </div>
-  <div class="field">
-    <%= f.label :course_id %><br>
-    <%= f.select :course_id, @courses.collect {|p| [ p.course_title, p.id ] }, { include_blank: true } %>
-  </div>
-  <div class="field">
-    <%= f.label :faculty_id %><br>
-    <%= f.number_field :faculty_id %>
-  </div>
-  <div class="field">
-    <%= f.label :time_id %><br>
-    <%= f.select :time_id, @class_times.collect {|p| [ p.schedule_type, p.id ] }, { include_blank: true } %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <!-- Row End -->
+</div>

@@ -1,24 +1,21 @@
+<%= render(:partial => "home/top") %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>S number:</strong>
+  <strong>Section number:</strong>
   <%= @section.s_number %>
 </p>
 
 <p>
-  <strong>Course:</strong>
-  <%= @section.course_id %>
+  <strong>Course Title:</strong>
+  <%= @section.course.course_title %>
 </p>
 
 <p>
-  <strong>Faculty:</strong>
-  <%= @section.faculty_id %>
+  <strong>Time Slot:</strong>
+  <%= @section.class_time.try(:schedule_type) %>
 </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @section.time_id %>
-</p>
-
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', sections_path %>
+<%= link_to 'Edit', edit_section_path(@section),class: "btn btn-warning" %> |
+<%= link_to 'Back', sections_path,class: "btn btn-success" %>
+<%= render(:partial => "home/bottom") %>

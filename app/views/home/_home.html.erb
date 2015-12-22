@@ -161,11 +161,11 @@
           <% @faculties.each do |faculty| %>
               <li>
                 <figure>
-                  <a href="#"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
+                  <a href="/faculties/<%= faculty.id %>"><img src="../../../assets/images/avatar1.png" alt="Adminise"/></a>
                 </figure>
                 <div class="welcome">
                   <p><%= faculty.f_position %></p>
-                  <h5><a href="/faculties/"><%= faculty.f_name %></a></h5>
+                  <h5><a href="/faculties/<%= faculty.id %>"><%= faculty.f_name %></a></h5>
                 </div>
               </li>
           <% end %>

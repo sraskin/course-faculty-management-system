@@ -1,33 +1,47 @@
-<p id="notice"><%= notice %></p>
+<%= render(:partial => "home/top") %>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Listing Sections</h2>
+          <p id="notice"><%= notice %></p>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
+          <div class="table-box">
+            <table class="table">
+              <tr>
+                <th>Section number</th>
+                <th>Course</th>
+                <th>Time</th>
+                <th colspan="3"></th>
+              </tr>
+              <tbody>
+              <% @sections.each do |section| %>
+                  <tr>
+                    <td><%= section.s_number %></td>
+                    <td><%= section.course.course_title %></td>
+                    <td><%= section.class_time.try(:schedule_type) %></td>
+                    <td><%= link_to 'Show', section, class: "btn btn-info" %></td>
+                    <td><%= link_to 'Edit', edit_section_path(section), class: "btn btn-warning" %></td>
+                    <td><%= link_to 'Drop Section', section, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br>
+            <%= link_to 'New Section', new_section_path, class: "btn btn-primary" %>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Row End -->
+</div>
+<%= render(:partial => "home/bottom") %>
 
-<h1>Listing Sections</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>S number</th>
-      <th>Course</th>
-      <th>Faculty</th>
-      <th>Time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sections.each do |section| %>
-      <tr>
-        <td><%= section.s_number %></td>
-        <td><%= section.course_id %></td>
-        <td><%= section.faculty_id %></td>
-        <td><%= section.time_id %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Section', new_section_path %>

@@ -1,11 +1,58 @@
-<p>Allocate Form</p>
-<%= form_tag home_allocate_path do %>
+<%= render(:partial => "home/top") %>
+<div class="container-liquid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="sec-box">
+        <a class="closethis">Close</a>
+        <header>
+          <h2 class="heading">Allocate A Course</h2>
+        </header>
+        <div class="contents">
+          <a class="togglethis">Toggle</a>
 
-    <%= select_tag :faculty_id, options_from_collection_for_select(@faculties, :id, :f_name) %>
+          <div class="table-box">
+            <table class="table">
+              <thead>
+              <tr>
+                <th class="col-md-12">Input details</th>
+              </tr>
+              </thead>
+              <tbody>
 
-    <%= select_tag :section_id, option_groups_from_collection_for_select(@courses, :sections, :course_title, :id, :name ) %>
+              <%= form_tag home_allocate_path do %>
+                  <div class="field">
+                    <tr>
+                      <td><%= label_tag "Choose Faculty" %><br></td>
+                    </tr>
+                    <tr>
+                      <td><%= select_tag :faculty_id, options_from_collection_for_select(@faculties, :id, :f_name), class: "col-md-12 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="field">
+                    <tr>
+                      <td><%= label_tag "Choose Choose Section/Course" %><br></td>
+                    </tr>
+                    <tr>
+                      <td><%= select_tag :section_id, option_groups_from_collection_for_select(@courses, :sections, :course_title, :id, :name), class: "col-md-12 form-control" %></td>
+                    </tr>
+                  </div>
+                  <div class="actions">
+                    <tr>
+                      <td><%= submit_tag :save, class: "btn btn-success" %></td>
+                    </tr>
+                  </div>
+              <% end %>
 
-    <div class="actions">
-      <%= submit_tag :save %>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-<% end %>
+  </div>
+  <!-- Row End -->
+</div>
+
+
+<%= render(:partial => "home/bottom") %>

@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   def allocate
     SectionFaculty.create(faculty_id: params[:faculty_id], section_id: params[:section_id])
     flash[:notice] = 'Successfully Done'
-    redirect_to root_path
+    redirect_to faculty_path(params[:faculty_id])
   end
 
   def offer_status
